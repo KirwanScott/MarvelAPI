@@ -40,7 +40,7 @@ class CharacterActivity : AppCompatActivity() {
                         it.characterDetail.isNotEmpty()->{
                             binding.progressBar.visibility = View.GONE
                             it.characterDetail.map { character ->
-                                val url = "${character.thumbnail.replace("http","https")}/landscape_medium.${character.thumbnailExt}"
+                                val url = "${character.thumbnail.replace("http","https")}/portrait_xlarge.${character.thumbnailExt}"
                                 Picasso.get().load(url).placeholder(R.drawable.image5).into(binding.appCompatImageView)
                                 binding.textView.text = character.name
                                 if(character.description.isNotEmpty()){

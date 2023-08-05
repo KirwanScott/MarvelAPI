@@ -100,17 +100,12 @@ class MainActivity : AppCompatActivity(),androidx.appcompat.widget.SearchView.On
         if(query!=null){
             searchTerm = query
             recyclerViewCharacters()
-            paginatedValue += 20
-            viewModel.getAllCharactersData(paginatedValue)
             callAPI()
 
         }
         if (searchTerm.isNotEmpty()) {
             search()
             recyclerViewCharacters()
-            paginatedValue += 20
-            viewModel.getAllCharactersData(paginatedValue)
-            callAPI()
         }
         return true
     }
@@ -119,16 +114,11 @@ class MainActivity : AppCompatActivity(),androidx.appcompat.widget.SearchView.On
         if(query!=null){
             searchTerm = query
             recyclerViewCharacters()
-            paginatedValue += 20
-            viewModel.getAllCharactersData(paginatedValue)
             callAPI()
         }
         if (searchTerm.isNotEmpty()) {
             search()
             recyclerViewCharacters()
-            paginatedValue += 20
-            viewModel.getAllCharactersData(paginatedValue)
-            callAPI()
         }
         return true
     }
