@@ -43,9 +43,13 @@ class CharacterActivity : AppCompatActivity() {
                                 val url = "${character.thumbnail.replace("http","https")}/landscape_medium.${character.thumbnailExt}"
                                 Picasso.get().load(url).placeholder(R.drawable.image5).into(binding.appCompatImageView)
                                 binding.textView.text = character.name
-                                binding.textView2.text = "CHARACTER DESCRIPTION: \n\n" + character.description
-                                Log.d("description",character.description)
-                                binding.textView3.text = "COMIC APEARENCES: \n\n" + character.comics.toString()
+                                if(character.description.isNotEmpty()){
+                                    binding.textView2.text = "Description: \n\n" + character.description
+                                    Log.d("description",character.description)
+                                }else{
+                                    binding.textView2.text = "Description not available for ${character.name}"
+                                }
+                                binding.textView3.text = "Comic appearances: \n\n" + character.comics.toString()
                             }
                         }
                     }

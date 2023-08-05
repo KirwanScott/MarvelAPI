@@ -43,8 +43,6 @@ class MainActivity : AppCompatActivity(),androidx.appcompat.widget.SearchView.On
         layoutManager = GridLayoutManager(this,2)
         recyclerViewCharacters()
 
-
-
         recyclerView.addOnScrollListener(object: RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
@@ -79,7 +77,7 @@ class MainActivity : AppCompatActivity(),androidx.appcompat.widget.SearchView.On
                     }
                     delay(1000)
                 }
-                }
+            }
         }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -101,11 +99,18 @@ class MainActivity : AppCompatActivity(),androidx.appcompat.widget.SearchView.On
     override fun onQueryTextSubmit(query: String?): Boolean {
         if(query!=null){
             searchTerm = query
+            recyclerViewCharacters()
+            paginatedValue += 20
+            viewModel.getAllCharactersData(paginatedValue)
+            callAPI()
+
         }
         if (searchTerm.isNotEmpty()) {
             search()
-            callAPI()
             recyclerViewCharacters()
+            paginatedValue += 20
+            viewModel.getAllCharactersData(paginatedValue)
+            callAPI()
         }
         return true
     }
@@ -113,11 +118,17 @@ class MainActivity : AppCompatActivity(),androidx.appcompat.widget.SearchView.On
     override fun onQueryTextChange(query: String?): Boolean {
         if(query!=null){
             searchTerm = query
+            recyclerViewCharacters()
+            paginatedValue += 20
+            viewModel.getAllCharactersData(paginatedValue)
+            callAPI()
         }
         if (searchTerm.isNotEmpty()) {
             search()
-            callAPI()
             recyclerViewCharacters()
+            paginatedValue += 20
+            viewModel.getAllCharactersData(paginatedValue)
+            callAPI()
         }
         return true
     }
