@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="@string/marvel_universe_app"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
