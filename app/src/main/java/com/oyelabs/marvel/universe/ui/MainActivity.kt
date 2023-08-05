@@ -43,6 +43,8 @@ class MainActivity : AppCompatActivity(),androidx.appcompat.widget.SearchView.On
         layoutManager = GridLayoutManager(this,2)
         recyclerViewCharacters()
 
+
+
         recyclerView.addOnScrollListener(object: RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
@@ -102,6 +104,8 @@ class MainActivity : AppCompatActivity(),androidx.appcompat.widget.SearchView.On
         }
         if (searchTerm.isNotEmpty()) {
             search()
+            callAPI()
+            recyclerViewCharacters()
         }
         return true
     }
@@ -112,6 +116,8 @@ class MainActivity : AppCompatActivity(),androidx.appcompat.widget.SearchView.On
         }
         if (searchTerm.isNotEmpty()) {
             search()
+            callAPI()
+            recyclerViewCharacters()
         }
         return true
     }

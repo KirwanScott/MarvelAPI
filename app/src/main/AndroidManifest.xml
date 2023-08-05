@@ -12,7 +12,8 @@
         android:theme="@style/Theme.MarvelUniverse">
         <activity
             android:name=".ui.Character.CharacterActivity"
-            android:exported="true" />
+            android:parentActivityName=".ui.MainActivity"
+            android:label="Character Detail"/>
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">
