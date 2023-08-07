@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#D32222">
+    android:background="#050404">
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/marvelstudios"
+        android:src="@drawable/image5"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="238dp" />
 
